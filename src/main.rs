@@ -28,7 +28,7 @@ fn fib(cache: &mut HashMap<usize, usize>, i: usize) -> usize {
     // Compute val
     match cache.get(&i) {
         Some(&val) => val,
-        None if i <= 3 => {
+        None if i <= 1 => {
             cache.insert(i, i);
             i
         },
