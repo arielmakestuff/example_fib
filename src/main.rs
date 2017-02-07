@@ -52,8 +52,10 @@ fn main() {
         io::stdin().read_line(&mut input)
             .expect("Failed to read line");
 
-        // Exit if "q" received
-        if input.trim() == "q" {
+        // Exit if empty line received, works for Linux, MacOS, or Windows
+        let quitvals = vec!["\r", "\n", "\r\n"];
+        if quitvals.contains(&input.as_str()) {
+            println!("Exiting...");
             break;
         }
 
